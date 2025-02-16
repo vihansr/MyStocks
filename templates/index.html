@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}MyStocks{% endblock %}
+
+{% block content %}
+<img src="static/candlesticks.png" class="img-fluid w-75 h-15 mx-auto d-block border-1" style="border: 4px solid black;" alt="Candlesticks">
+<!--<h1 class="text-center">Your Analysis.</h1>-->
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+  <div class="col-md-10">
+  {%for post in posts%}
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis">{{post.stock}}</strong>
+        <h3 class="mb-0">{{post.heading}}</h3>
+        <div class="mb-1 text-body-secondary">{{post.date}}</div>
+        <p class="card-text mb-auto">{{post.analysis}}</p>
+        <div class="d-flex gap-2">
+        <a type="button" href="{{url_for('edit', post_id=post.id)}}" class="btn btn-primary col-6 me-2 ">Edit</a>
+        <a type="button" href="{{url_for('delete', id=post.id)}}" class="btn btn-danger col-6 me-2">Delete</a>
+        </div>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+          <img src="static/up.png"
+               class="bd-placeholder-img"
+               width="200"
+               height="250"
+               alt="Placeholder: Thumbnail">
+</div>
+
+    </div>
+    {%endfor%}
+  </div>
+</div>
+
+
+{% endblock %}

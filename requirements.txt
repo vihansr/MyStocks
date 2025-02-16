@@ -1,8 +1,8 @@
-Flask_WTF==1.2.1
+Flask-WTF==1.2.1
 WTForms==3.0.1
 Werkzeug==3.0.0
 Flask==2.3.2
-flask_sqlalchemy==3.1.1
+flask-sqlalchemy==3.1.1
 SQLAlchemy==2.0.25
-flask-bootstrap5
-Gunicorn
+flask-bootstrap5==23.3.0  # Add version to avoid compatibility issues
+gunicorn==21.2.0  # Make sure gunicorn is in lowercase and has a version
